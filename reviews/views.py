@@ -3,7 +3,11 @@ from .models import Book, Review
 from .utils import average_rating
 
 def index(request):
-    return render(request, 'base.html')
+    return render(request, "reviews/base.html")
+
+def book_search(request):
+    search_text = request.GET.get("search", "")
+    return render(request, "reviews/search-results.html", {"search_text": search_text})
 
 def book_list(request):
     books = Book.objects.all()
