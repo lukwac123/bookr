@@ -47,3 +47,4 @@ def book_detail(request, pk):
             "reviews": None
         }
     return render(request, "reviews/book_detail.html", context)
+
