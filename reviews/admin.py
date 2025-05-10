@@ -3,7 +3,7 @@ from reviews.models import Publisher, Contributor, Book, BookContributor, Review
 
 class BookAdmin(admin.ModelAdmin):
     list_display = ('title', 'isbn')
-    list_filter = ('publisher',)
+    list_filter = ('publisher', 'publication_date')
 
 # Register your models here.
 admin.site.register(Publisher)
