@@ -28,9 +28,21 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="/">Strona główna <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Wyloguj</a>
-                    </li>
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <form action="/accounts/logout/" method="post" class="d-line">
+                                {% csrf_token %}
+                                <button type="submit" class="nav-link btn btn-link" style="font-size: 25px; border: none">Wyloguj</button>
+                            </form>
+                        </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <form action="/accounts/login/" method="post" class="d-line">
+                                {% csrf_token %}
+                                <button type="submit" class="nav-link btn btn-link" style="font-size: 25px; border: none">Zaloguj</button>
+                            </form>
+                        </li>
+                    {% endif %}
                 </ul>
                 <form class="form-inline my-2 my-lg-0" action="{% url 'book_search' %}">
                     <input name="search" value="{{ search_text }}" minlength="3" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

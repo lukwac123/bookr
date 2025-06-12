@@ -45,6 +45,7 @@
             {% endfor %}
             </ul>
       {% endif %}
+      
       <a class="btn btn-primary" href="{% url 'review_create' book.pk %}">Dodaj recenzję</a>
       <a class="btn btn-primary" href="{% url 'book_media' book.pk %}">Media</a>
 {% endblock %}
