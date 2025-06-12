@@ -7,7 +7,7 @@
     <div>
         <p>
             Nazwa użytkownika: {{ request.user.username }} <br>
-            Imię i nazwisko: {{ request.user.first_name }} <br>
+            Imię i nazwisko: {{ request.user.first_name }} {{ request.user.last_name}} <br>
             Data dołączenia: {{ request.user.date_joined }} <br>
             E-mail: {{ request.user.email }} <br>
             Ostatni login: {{ request.user.last_login }} <br>
