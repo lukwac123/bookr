@@ -72,8 +72,8 @@ class Login(APIView):
 class BookViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
-    authentication_classes = [TokenAuthentication] 
-    permission_classes = [IsAuthenticated]
+    authentication_classes = [] # TokenAuthentication
+    permission_classes = [] # IsAuthenticated
 
 
 class ReviewViewSet(viewsets.ModelViewSet):
