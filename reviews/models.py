@@ -36,6 +36,9 @@ class Contributor(models.Model):
     def initialled_name(self):
         initials = ''.join([name[0] for name in self.first_names.split(' ')])
         return "(), ()".format(self.last_names, initials)
+    
+    def number_contributions(self):
+        return self.bookcontributor_set.count()
 
     def __str__(self):
         return self.initialled_name()
