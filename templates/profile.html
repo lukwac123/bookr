@@ -54,13 +54,16 @@
                 {% endfor %}     
             </p>
         </div>
-                <div class="infocell">
+        <div class="infocell">
             <p>
                 {% book_list user.username %}
             </p>
-        </div>          
+        </div>     
     </div>
-
+    <br>
+    {% autoescape off %}
+        {{ books_read_plot }}  
+    {% endautoescape %}  
 
 
 {% endblock %}
