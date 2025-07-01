@@ -48,7 +48,13 @@ class Dev(Configuration):
         'debug_toolbar',
         'crispy_bootstrap4',
         'crispy_forms',
+        'django.contrib.sites',
+        'allauth',
+        'allauth.socialaccount',
+        'allauth.socialaccount.providers.google',
     ]
+
+    SITE_ID = 1
 
     MIDDLEWARE = [
         'debug_toolbar.middleware.DebugToolbarMiddleware',
@@ -138,6 +144,11 @@ class Dev(Configuration):
 
     CRISPY_ALLOWED_TEMPLATE_PACKS = ["bootstrap4"]
     CRISPY_TEMPLATE_PACK = "bootstrap4"
+
+    AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+    ]
 
 class Prod(Dev):
     DEBUG = False

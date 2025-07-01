@@ -25,12 +25,13 @@ from bookr.views import profile, reading_history
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include(('django.contrib.auth.urls', 'auth'), namespace='accounts')),
+    path('accounts/', include('allauth.urls')),
     path('accounts/profile/', profile, name='profile'),
     path('accounts/profile/reading_history', reading_history, name='reading_history'),
     path('', reviews.views.index),
     path('book-search/', reviews.views.book_search, name='book_search'),
     path('', include('reviews.urls')),
-    path('', include('bookr_test.urls')),
+    path('', include('bookr_test.urls')),  
 ]
 
 if settings.DEBUG:
