@@ -46,6 +46,8 @@ class Dev(Configuration):
         'reviews',
         'bookr_test',
         'debug_toolbar',
+        'crispy_bootstrap4',
+        'crispy_forms',
     ]
 
     MIDDLEWARE = [
@@ -133,6 +135,9 @@ class Dev(Configuration):
     MEDIA_URL = '/media/'
 
     INTERNAL_IPS = ['127.0.0.1']
+
+    CRISPY_ALLOWED_TEMPLATE_PACKS = ["bootstrap4"]
+    CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 class Prod(Dev):
     DEBUG = False

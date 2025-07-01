@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
 {% block title %}
     {% if form.is_valid and search_text %}
         Wyniki wyszukiwania dla "{{ search_text }}"
@@ -9,11 +11,7 @@
 
 {%block content %}
     <h2>Wyszukiwanie książek</h2>
-    <form>
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Wyszukaj</button>
-    </form>
-
+    {% crispy form %}
     {% if form.is_valid and search_text %}
         <h3>Wyniki wyszukiwania dla <em>{{ search_text }}</em></h3>
         <ul class="list-group">
