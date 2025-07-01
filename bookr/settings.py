@@ -45,9 +45,11 @@ class Dev(Configuration):
         'rest_framework.authtoken',
         'reviews',
         'bookr_test',
+        'debug_toolbar',
     ]
 
     MIDDLEWARE = [
+        'debug_toolbar.middleware.DebugToolbarMiddleware',
         'django.middleware.security.SecurityMiddleware',
         'django.contrib.sessions.middleware.SessionMiddleware',
         'django.middleware.common.CommonMiddleware',
@@ -129,6 +131,8 @@ class Dev(Configuration):
 
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
     MEDIA_URL = '/media/'
+
+    INTERNAL_IPS = ['127.0.0.1']
 
 class Prod(Dev):
     DEBUG = False
