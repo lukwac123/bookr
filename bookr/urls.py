@@ -32,6 +32,7 @@ urlpatterns = [
     path('book-search/', reviews.views.book_search, name='book_search'),
     path('', include('reviews.urls')),
     path('', include('bookr_test.urls')),  
+    path('react-example/', reviews.views.react_example),
 ]
 
 if settings.DEBUG:
