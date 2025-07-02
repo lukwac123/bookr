@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n static %}
+{% load socialaccount %}
 
 
 {% block content %}
@@ -22,17 +23,18 @@
 {% if user.is_authenticated %}
 <p class="errornote">
 {% blocktranslate trimmed %}
-    You are authenticated as {{ username }}, but are not authorized to
+    You are authenticated as {{ user }}, but are not authorized to
     access this page. Would you like to login to a different account?
 {% endblocktranslate %}
 </p>
 {% endif %}
-
+<br>
 <form action="{% url 'accounts:login' %}" method="post" id="login-form">{% csrf_token %}
   <div class="form-row">
     {{ form.username.errors }}
     {{ form.username.label_tag }} {{ form.username }}
   </div>
+  <br>
   <div class="form-row">
     {{ form.password.errors }}
     {{ form.password.label_tag }} {{ form.password }}
@@ -44,8 +46,12 @@
     <a href="{{ password_reset_url }}">{% translate 'Forgotten your password or username?' %}</a>
   </div>
   {% endif %}
+  <br>
+  <a href="{% provider_login_url 'google' %}?process=login" class="btn btn-secondary btn-light border">Zaloguj się przez konto Google &nbsp;<img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google logo" class="google-icon" width="20px" height="20px"></a>
+             
   <div class="submit-row">
-    <input type="submit" value="{% translate 'Log in' %}">
+  <br>
+  <input type="submit" value="{% translate 'Log in' %}">
   </div>
 </form>
 
