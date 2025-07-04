@@ -21,7 +21,6 @@ Projekt **Bookr** to aplikacja internetowa zbudowana w Django, umożliwiająca p
 
 ## 🧩 Struktura projektu
 
-
 | 📁 bookr/                                     | Katalog główny                                |
 |:----------------------------------------------|:----------------------------------------------|
 | 📁 .venv/                                     | Środowisko wirtualne (ignorowane przez Git)   |
@@ -51,3 +50,44 @@ Projekt **Bookr** to aplikacja internetowa zbudowana w Django, umożliwiająca p
 | 📄 README.md                                  | Dokumentacja projektu                         |
 
 ---
+
+## ⚙️ Etapy projektu
+
+### 1. Wprowadzenie do Django i projektu Bookr
+- Instalacja Django i konfiguracja środowiska.
+- Struktura projektu Django.
+- Tworzenie aplikacji i uruchamianie serwera deweloperskiego.
+### 2. Modele i relacje
+- Tworzenie modeli Django i pól bazodanowych.
+- Relacje między modelami: OneToMany i ManyToMany.
+- Migracje i korzystanie z ORM.
+### 3. Panel administracyjny
+- Rejestracja modeli w panelu admina.
+- Dostosowanie widoków administracyjnych.
+- Filtry, pola wyszukiwania i pola tylko do odczytu.
+### 4. Widoki i szablony
+- Tworzenie widoków funkcjonalnych i klasowych.
+- Przekazywanie danych do szablonów.
+- Tworzenie i dziedziczenie szablonów HTML.
+### 5. Uwierzytelnianie i autoryzacja
+- Tworzenie użytkowników, logowanie, wylogowywanie.
+- Ochrona widoków i ról użytkowników.
+- Szablony z treściami zależnymi od zalogowania.
+### 6. Tworzenie API z Django REST Framework
+- Serializatory i widoki API.
+- Endpointy do pobierania i zapisywania danych.
+- Autoryzacja na poziomie API.
+### 7. Testowanie aplikacji
+- Testy jednostkowe modeli i widoków.
+- Testy integracyjne z użyciem klienta Django.
+- Korzyści z pokrycia testami.
+
+---
+
+## 📘 Źródło
+
+Ten projekt został wykonany na podstawie książki:
+
+_Django. Tworzenie nowoczesnych aplikacji internetowych w Pythonie_  
+Autor: Ben Shaw  
+Wydawnictwo: Helion
